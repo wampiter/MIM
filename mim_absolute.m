@@ -1,6 +1,7 @@
 function [ mim_abs_map ] = mim_absolute(data,min,max)
 %UNTITLED14 Summary of this function goes here
 %   Detailed explanation goes here
+addpath('common subfunctions')
 for i = 1:size(data,3)
     z = data(:,2,i);
     mim = data(:,6,i);
