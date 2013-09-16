@@ -1,6 +1,8 @@
 function [ topo ] = mim_topo(data,min,max)
-%UNTITLED14 Summary of this function goes here
-%   Detailed explanation goes here
+%Extrapolates topography from MIM signal
+%   min and max from observing plot_all_mim. This gives raw topography.
+%   Leveling (eg. subplane) and outlier removal (you can just manually set
+%   caxis) are necessary to produce a meaningful result.
 addpath('common subfunctions')
 for i = 1:size(data,3)
     z = data(:,3,i);

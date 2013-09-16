@@ -1,6 +1,8 @@
 function [ mim_abs_map ] = mim_absolute(data,min,max,lift)
-%UNTITLED14 Summary of this function goes here
-%   Detailed explanation goes here
+%Generates the MIM signal from raw data by subracting signal at sample
+%surface from signal at height lift (um) above
+%   min and max should be set by observing plot_all_mim. I have set lift in
+%   the range from 0.01u to 0.1u.
 addpath('common subfunctions')
 for i = 1:size(data,3)
     z = data(:,3,i);
