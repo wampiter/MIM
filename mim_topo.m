@@ -8,6 +8,8 @@ for i = 1:size(data,3)
     z = data(:,3,i);
     mim = data(:,6,i);
     
+    %Get the index at which the derivative dMIM/dz is the greatest. This
+    %corresponds to the point of contact.
     maxind = index_of_bounded_max_d(z,mim,min,max);
     
     height(i) = z(maxind);    

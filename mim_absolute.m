@@ -8,10 +8,13 @@ for i = 1:size(data,3)
     z = data(:,3,i);
     mim = data(:,6,i);
     
+    %Determine index of max dMIM/dz to get point of contact.
     maxind = index_of_bounded_max_d(z,mim,min,max);
     
+    %Determine index of point lift above the point of contact.
     [raiseind,~] = get_z_index(z,z(maxind),z(maxind)+lift);
     
+    %Take the difference of MIM at these 2 points to get result.
     mim_abs(i) = mim(maxind)-mim(raiseind);  
 end
 mim_abs_map = square_data(mim_abs);

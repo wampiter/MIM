@@ -5,11 +5,12 @@ function [ ] = plot_all_mim( data )
 %   displacement), and make the appropriate changes in mim_toppo and
 %   mim_absolute (change the 3 to a 2)
 for i = 1:size(data,3)
-    zs = data(:,2,i);
-    z = data(:,3,i);
+    zs = data(:,2,i); %piezo voltage
+    z = data(:,3,i); %measured dispacement (movement of z scanner)
     %force = data(:,4,i);
     mim = data(:,6,i);
-
+    
+    figure
     hold all
     plot(z,mim)
     %plot(z(maxind),mim(maxind),'X')
